@@ -18,3 +18,9 @@ RoadMap
 * [] zookeeper cluster
 * [] kafka cluster
 * [] deploy applications kafka stream (with spring-boot delivered with container)
+
+
+Install notes:
+--------------
+* Install Kubernetes on Ubuntu : https://ubuntu.com/kubernetes/install
+
