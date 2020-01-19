@@ -12,10 +12,20 @@ Middlewares: one cluster zookeeper, one cluster Kafka with replicator = 2 (min.i
 
 RoadMap
 * [] Init k8s scripts
+
+```
+kubectl create namespace kafka
+kubectl get namespaces
+```
+
 * [] VPC
 * [] subnet
 * [] communications
 * [] zookeeper cluster
+
+zookeeper cluster should be stateful: StatefulSet, persistentVolume
+one port for broadcast, one port for Leader-election
+
 * [] kafka cluster
 * [] deploy applications kafka stream (with spring-boot delivered with container)
 
