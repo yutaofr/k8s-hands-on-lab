@@ -26,6 +26,9 @@ kubectl get namespaces
 zookeeper cluster should be stateful: StatefulSet, persistentVolume
 one port for broadcast, one port for Leader-election
 
+https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
+
+
 * [] kafka cluster
 * [] deploy applications kafka stream (with spring-boot delivered with container)
 
