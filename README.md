@@ -35,5 +35,43 @@ https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
 
 Install notes:
 --------------
-* Install Kubernetes on Ubuntu : https://ubuntu.com/kubernetes/install
+* Install kubectl on Ubuntu:
+```
+sudo snap install kubectl --classic
+kubectl version
+```
+
+* Install virtualbox on Ubuntu:
+```
+sudo apt-get install virtualbox
+```
+
+* Install minikube on Ubuntu : 
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube
+
+sudo mkdir -p /usr/local/bin/
+sudo install minikube /usr/local/bin/
+
+minikube start --vm-driver=virtualbox
+
+minikube status
+
+minikube stop
+
+```
+
+* Start a minikube local
+
+```
+minikube start
+```
+
+* minikube dashboard
+
+```
+minikube dashboard
+```
 
