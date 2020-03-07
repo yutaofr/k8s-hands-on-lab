@@ -94,6 +94,8 @@ kubectl apply -f zookeeper/local/zookeeper-service.yml
 * verify if Zookeeper installed correctly
 
  ```
+kubectl get pods --namespace=hands-on-lab
+# get the name of pod: zookeeper-deployment-785c9d99c8-pv8qw
 kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCli.sh create /hello world
 kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCli.sh get /hello
 ```
