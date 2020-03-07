@@ -91,5 +91,14 @@ kubectl apply -f zookeeper/local/zookeeper-deployment.yml
 kubectl apply -f zookeeper/local/zookeeper-service.yml
 ```
 
- 
+* verify if Zookeeper installed correctly
+
+ ```
+kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCli.sh create /hello world
+kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCli.sh get /hello
+```
+
+we should find "world" in the end
+
+
 
