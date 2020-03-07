@@ -100,7 +100,20 @@ kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCl
 kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCli.sh get /hello
 ```
 
-we should find "world" in the end
+"world" should be seen in the end of output
 
+* deploy local Kafka 3 nodes cluster
 
+```
+kubectl apply -f kafka/local/kafka.yml
+```
+
+* verify the cluster's event
+
+```
+kubectl get all --namespace=hands-on-lab
+kubectl get events --namespace=hands-on-lab
+```
+
+* 
 

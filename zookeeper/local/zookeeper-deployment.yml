@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: zookeeper-deployment
   namespace: hands-on-lab
+  labels:
+    app: zookeeper
 spec:
   replicas: 1
   selector:
