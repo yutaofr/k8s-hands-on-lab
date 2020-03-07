@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: zookeeper-deployment
-  namespace: kafka
+  namespace: hands-on-lab
 spec:
   replicas: 1
   selector:

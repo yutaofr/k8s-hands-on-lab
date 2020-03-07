@@ -69,9 +69,27 @@ minikube stop
 minikube start
 ```
 
-* minikube dashboard
+* Start the minikube dashboard
 
 ```
 minikube dashboard
 ```
+
+Local cluster deployment
+-------------------------
+
+* deploy the hands-on-lab name space
+
+```
+kubectl apply -f namespace.yml
+```
+
+* deploy local Zookeeper single node cluster
+
+```
+kubectl apply -f zookeeper/local/zookeeper-deployment.yml
+kubectl apply -f zookeeper/local/zookeeper-service.yml
+```
+
+ 
 
