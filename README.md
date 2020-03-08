@@ -1,7 +1,7 @@
 # k8s-hands-on-lab
-k8s hand on lab
 
-Architecture:
+## Architecture:
+
 ![Architecture](k8s-test.bmp)
 
 Network: one VPC, one subnet / availble zone
@@ -10,7 +10,8 @@ Communication: all flows open between the three nodes
 
 Middlewares: one cluster zookeeper, one cluster Kafka with replicator = 2 (min.isr = 2), applications will be deployed as POD?
 
-RoadMap
+## RoadMap
+
 * [] Init k8s scripts
 
 ```
@@ -33,8 +34,8 @@ https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
 * [] deploy applications kafka stream (with spring-boot delivered with container)
 
 
-Install notes:
---------------
+## Install notes:
+
 * Install kubectl on Ubuntu:
 ```
 sudo snap install kubectl --classic
@@ -75,16 +76,24 @@ minikube start
 minikube dashboard
 ```
 
-Local cluster deployment
--------------------------
+## Local cluster deployment
 
-* deploy the hands-on-lab name space
+### deploy the hands-on-lab name space
 
 ```
 kubectl apply -f namespace.yml
 ```
 
-* deploy local Zookeeper single node cluster
+In order to avoid repeat the namespace in all subsequent command kubectl, we can change the preference namespace to ours
+
+```
+kubectl config set-context --current --namespace=hands-on-lab
+
+# verify it
+kubectl config view --minify | grep namespace:
+```
+
+### deploy local Zookeeper single node cluster
 
 ```
 kubectl apply -f zookeeper/local/zookeeper
@@ -101,7 +110,7 @@ kubectl exec zookeeper-deployment-785c9d99c8-pv8qw --namespace=hands-on-lab zkCl
 
 "world" should be seen in the end of output
 
-* deploy local Kafka 3 nodes cluster
+### deploy local Kafka 3 nodes cluster
 
 ```
 kubectl apply -f kafka/local/kafka.yml
@@ -120,8 +129,7 @@ kubectl get events --namespace=hands-on-lab
 kubectl exec -it kafka-0 --namespace=hands-on-lab /bin/bash
 ```
 
-deploy local kafka client POD
------------------------------
+### deploy local kafka client POD
 
 ```
 kubectl apply -f kafka/local/kafka-client.yml
