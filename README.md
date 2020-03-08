@@ -115,5 +115,23 @@ kubectl get all --namespace=hands-on-lab
 kubectl get events --namespace=hands-on-lab
 ```
 
-* 
+* run interactive bash in one POD
+
+```
+kubectl exec -it kafka-0 --namespace=hands-on-lab /bin/bash
+```
+
+deploy local kafka client POD
+-----------------------------
+
+```
+kubectl apply -f kafka/local/kafka-client.yml
+```
+
+try create a topic into the Kafka cluster
+
+```
+kafka-topics --bootstrap-server kafka:9092 --create --replication-factor 3 --partitions=3 --topic test_topic_2
+kafka-topics --bootstrap-server kafka:9092 --describe --topic test_topic_2
+```
 

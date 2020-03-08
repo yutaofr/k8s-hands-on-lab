@@ -1,7 +1,23 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper
+  namespace: hands-on-lab
+  labels:
+    app: zookeeper
+spec:
+  type: ClusterIP
+  selector:
+    app: zookeeper
+  ports:
+    - name: zookeeper
+      port: 2181
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: zookeeper-deployment
+  name: zookeeper
   namespace: hands-on-lab
   labels:
     app: zookeeper
@@ -9,11 +25,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      component: zookeeper
+      app: zookeeper
   template:
     metadata:
       labels:
-        component: zookeeper
+        app: zookeeper
     spec:
       containers:
         - name: zookeeper
