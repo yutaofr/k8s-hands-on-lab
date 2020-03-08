@@ -64,7 +64,7 @@ minikube stop
 
 ```
 
-* Start a minikube local
+* Start a minikube instance
 
 ```
 minikube start
@@ -74,6 +74,18 @@ minikube start
 
 ```
 minikube dashboard
+```
+
+* Stop the minikube instance
+
+```
+minikube stop
+```
+
+* If the cluster deployed is no more needed, the minikube instance could be deleted
+
+```
+minikube delete
 ```
 
 ## Local cluster deployment
