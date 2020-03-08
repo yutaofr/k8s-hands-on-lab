@@ -87,8 +87,7 @@ kubectl apply -f namespace.yml
 * deploy local Zookeeper single node cluster
 
 ```
-kubectl apply -f zookeeper/local/zookeeper-deployment.yml
-kubectl apply -f zookeeper/local/zookeeper-service.yml
+kubectl apply -f zookeeper/local/zookeeper
 ```
 
 * verify if Zookeeper installed correctly
@@ -128,10 +127,27 @@ deploy local kafka client POD
 kubectl apply -f kafka/local/kafka-client.yml
 ```
 
-try create a topic into the Kafka cluster
+Try create a topic into the Kafka cluster
 
 ```
-kafka-topics --bootstrap-server kafka:9092 --create --replication-factor 3 --partitions=3 --topic test_topic_2
-kafka-topics --bootstrap-server kafka:9092 --describe --topic test_topic_2
+kubectl exec -it kafka-client --namespace=hands-on-lab /bin/bash
+kafka-topics --bootstrap-server kafka:9092 --create --replication-factor 3 --partitions=3 --topic test_topic
+kafka-topics --bootstrap-server kafka:9092 --describe --topic test_topic
+```
+
+Have a look what the Kafka logs said
+
+```
+kubectl logs -f kafka-2 --namespace=hands-on-lab
+```
+
+Here kafka-2 is one of the kafka POD's name
+
+Try some perf test like :
+
+```
+kafka-producer-perf-test  --topic test_topic --num-records 50000 --record-size 100 --throughput -1 --producer-props acks=-1 bootstrap.servers=kafka:9092 buffer.memory=67108864 batch.size=8196
+
+kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --topic test_topic  --property print.key=true
 ```
 
