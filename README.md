@@ -2,7 +2,7 @@
 
 ## Architecture:
 
-![Architecture](k8s-test.bmp)
+![Architecture](images/k8s-test.bmp)
 
 Network: one VPC, one subnet / availble zone
 VM: one node / subnet
