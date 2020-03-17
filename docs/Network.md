@@ -37,7 +37,7 @@ But From Kafka cluster, each instance Zookeeper should have a fixed and unique p
 
 As shown as:
 
-![Zookeeper local network](images/zookeeper-local-network.png)
+![Zookeeper local network](../images/zookeeper-local-network.png)
 
 
 Kafka Cluster
