@@ -31,6 +31,23 @@ https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
 
 
 * [X] kafka cluster
+* [ ] cluster monitoring: Graphana
+
+    * [ ] VM monitoring: CPU, Memory, Network, Disk IO
+    * [ ] Kafka JMX metrics
+    
+    SideCar: 
+    - monitoring container deployed with kafka container in the same POD?
+    - via DaemondSet: monitoring deployed as POD but with Kafka POD in the same node?         
+    
+* [ ] cluster centralized log
+    * [ ] Zookeeper log
+    * [ ] Kafka broker log : fluentd? logstash? prometheus?
+    * [ ] Kafka client log
+    
+    SideCar:
+    - Same questions as monitoring
+
 * [ ] deploy applications kafka stream (with spring-boot delivered with container)
 
 
