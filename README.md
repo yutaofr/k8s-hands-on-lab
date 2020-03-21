@@ -38,7 +38,13 @@ https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
     
     SideCar: 
     - monitoring container deployed with kafka container in the same POD?
-    - via DaemondSet: monitoring deployed as POD but with Kafka POD in the same node?         
+    - via DaemondSet: monitoring deployed as POD but with Kafka POD in the same node?
+    
+    Implementation: 
+    - [ ] Prometheus => Graphana
+    - Telegraf => InfluxDB => Graphana
+    
+    Alerting is not a major concern for this labo
     
 * [ ] cluster centralized log
     * [ ] Zookeeper log
@@ -47,6 +53,10 @@ https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
     
     SideCar:
     - Same questions as monitoring
+    
+    Implementation: 
+    - Fluentd => InfluxDB => Graphana
+    - Fluentd => ElasticSearch => Kibana
 
 * [ ] deploy applications kafka stream (with spring-boot delivered with container)
 
