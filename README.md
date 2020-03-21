@@ -198,3 +198,7 @@ kafka-producer-perf-test  --topic test_topic --num-records 50000 --record-size 1
 kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --topic test_topic  --property print.key=true
 ```
 
+# Monitoring
+
+[See Monitoring document](docs/monitoring.md)
+
